@@ -1,0 +1,15 @@
+
+builders:
+  use_case_injector:
+    import: "package:x_dependency_injector/builder.dart"
+    builder_factories: ["injectUseCaseGeneratorBuilder"]
+    build_extensions: {".dart": [".inject.dart"]}
+    runs_before: [ "injectable_generator|di_init_injector" ]
+    auto_apply: dependents
+    build_to: cache
+  di_init_injector:
+    import: "package:x_dependency_injector/builder.dart"
+    builder_factories: ["injectEntryGeneratorBuilder"]
+    build_extensions: {".dart": [".inject.dart"]}
+    auto_apply: dependents
+    build_to: source
