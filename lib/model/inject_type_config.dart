@@ -7,7 +7,6 @@ class InjectTypeConfig {
   final String importPath;
   final List<DependencyTypeConfig>? dependencies;
 
-  // 添加 fromJson 构造函数
   InjectTypeConfig.fromJson(Map<String, dynamic> json)
       : injectType = json['injectType'],
         importPath = json['importPath'],
@@ -15,7 +14,6 @@ class InjectTypeConfig {
             ?.map((e) => DependencyTypeConfig.fromJson(e))
             .toList();
 
-  // 添加 toJson 方法
   Map<String, dynamic> toJson() => {
         'injectType': injectType,
         'importPath': importPath,

@@ -42,7 +42,6 @@ class InjectEntryGenerator extends GeneratorForAnnotation<InjectEntry> {
       }
     }
 
-    // 写入导入语句
     buffer.writeln("import 'package:get/get.dart';");
     for (final import in imports) {
       buffer.writeln("import '$import';");

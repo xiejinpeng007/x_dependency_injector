@@ -12,4 +12,5 @@ Builder injectUseCaseGeneratorBuilder(BuilderOptions options) => LibraryBuilder(
 
 Builder injectEntryGeneratorBuilder(BuilderOptions options) => LibraryBuilder(
       InjectEntryGenerator(),
+      generatedExtension: '.inject.dart',
     );
