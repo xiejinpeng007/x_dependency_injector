@@ -12,7 +12,7 @@ class InjectEntryGenerator extends GeneratorForAnnotation<InjectEntry> {
   @override
   generateForAnnotatedElement(
       Element element, ConstantReader annotation, BuildStep buildStep) async {
-    final injectableConfigFiles = Glob(".dart_tool/**.inject.json");
+    final injectableConfigFiles = Glob("**/*.inject.json");
     final jsonData = <Map<String, dynamic>>[];
     await for (final id in buildStep.findAssets(injectableConfigFiles)) {
       final json = jsonDecode(await buildStep.readAsString(id));
